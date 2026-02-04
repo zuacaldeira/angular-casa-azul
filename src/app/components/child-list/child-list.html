@@ -1,0 +1,21 @@
+<div class="child-list">
+  <h2>Children</h2>
+
+  <div class="filters">
+    <button (click)="onFilterByLanguage(null)" [class.active]="!selectedLanguage">All</button>
+    <button (click)="onFilterByLanguage('de')" [class.active]="selectedLanguage === 'de'">Deutsch</button>
+    <button (click)="onFilterByLanguage('pt')" [class.active]="selectedLanguage === 'pt'">Portugu&#234;s</button>
+    <button (click)="onFilterByLanguage('fr')" [class.active]="selectedLanguage === 'fr'">Fran&#231;ais</button>
+  </div>
+
+  <div *ngIf="loading" class="loading">Loading...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <ul *ngIf="!loading && !error">
+    <li *ngFor="let child of filteredChildren; trackBy: trackByChildId">
+      <a [routerLink]="['/children', child.id]">
+        {{ child.firstName }} {{ child.lastName }} (Age: {{ getAge(child.dateOfBirth) }})
+      </a>
+    </li>
+  </ul>
+</div>

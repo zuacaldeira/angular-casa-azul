@@ -1,1 +1,22 @@
-<p>header works!</p>
+<header class="app-header">
+  <nav>
+    <a routerLink="/" class="brand">Casa Azul</a>
+
+    <div class="nav-links">
+      <a routerLink="/children">Children</a>
+      <a routerLink="/groups">Groups</a>
+
+      <ng-container *ngIf="isLoggedIn">
+        <a *ngIf="isTeacher" routerLink="/attendance">Attendance</a>
+        <a routerLink="/messages">
+          Messages
+          <span *ngIf="(unreadCount$ | async) as count" class="badge">{{ count }}</span>
+        </a>
+        <a *ngIf="isParent" routerLink="/portal">My Portal</a>
+        <button (click)="onLogout()">Logout</button>
+      </ng-container>
+
+      <a *ngIf="!isLoggedIn" routerLink="/login">Login</a>
+    </div>
+  </nav>
+</header>

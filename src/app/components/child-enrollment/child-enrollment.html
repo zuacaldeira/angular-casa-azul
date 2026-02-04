@@ -1,0 +1,41 @@
+<div class="enrollment-form">
+  <h2>Enroll a Child</h2>
+
+  <form [formGroup]="enrollmentForm" (ngSubmit)="onSubmit()">
+    <fieldset>
+      <legend>Child Information</legend>
+      <label>First Name <input formControlName="childFirstName" /></label>
+      <label>Last Name <input formControlName="childLastName" /></label>
+      <label>Date of Birth <input type="date" formControlName="dateOfBirth" /></label>
+
+      <div class="languages">
+        <span>Preferred Languages:</span>
+        <label><input type="checkbox" (change)="onLanguageToggle('de')" /> Deutsch</label>
+        <label><input type="checkbox" (change)="onLanguageToggle('pt')" /> Portugu&#234;s</label>
+        <label><input type="checkbox" (change)="onLanguageToggle('fr')" /> Fran&#231;ais</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Parent/Guardian Information</legend>
+      <label>First Name <input formControlName="parentFirstName" /></label>
+      <label>Last Name <input formControlName="parentLastName" /></label>
+      <label>Email <input type="email" formControlName="parentEmail" /></label>
+      <label>Phone <input type="tel" formControlName="parentPhone" /></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Medical Information</legend>
+      <label>Allergies (comma-separated) <input formControlName="allergies" /></label>
+      <label>Medical Notes <textarea formControlName="medicalNotes"></textarea></label>
+    </fieldset>
+
+    <div *ngIf="validationErrors.length > 0" class="errors">
+      <p *ngFor="let err of validationErrors">{{ err }}</p>
+    </div>
+
+    <button type="submit" [disabled]="submitting">
+      {{ submitting ? 'Submitting...' : 'Submit Enrollment' }}
+    </button>
+  </form>
+</div>

@@ -1,0 +1,28 @@
+<div class="attendance-tracker">
+  <h2>Attendance - {{ today | date:'mediumDate' }}</h2>
+  <p>Attendance Rate: {{ attendanceRate }}%</p>
+
+  <div *ngIf="loading" class="loading">Loading...</div>
+
+  <table *ngIf="!loading">
+    <thead>
+      <tr>
+        <th>Child</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let child of children">
+        <td>{{ child.firstName }} {{ child.lastName }}</td>
+        <td>{{ getChildRecord(child.id)?.status ?? 'Not recorded' }}</td>
+        <td *ngIf="!getChildRecord(child.id)">
+          <button (click)="markPresent(child.id)">Present</button>
+          <button (click)="markAbsent(child.id, 'absent')">Absent</button>
+          <button (click)="markAbsent(child.id, 'sick')">Sick</button>
+          <button (click)="markAbsent(child.id, 'vacation')">Vacation</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

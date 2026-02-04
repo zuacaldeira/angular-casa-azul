@@ -1,0 +1,20 @@
+<div class="message-inbox">
+  <h2>Messages</h2>
+
+  <div *ngIf="loading" class="loading">Loading...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div *ngIf="!loading && !error && messages.length === 0" class="empty">
+    No messages.
+  </div>
+
+  <div *ngFor="let message of messages" class="message" [class.unread]="!message.read">
+    <div class="message-header">
+      <strong>{{ message.subject }}</strong>
+      <span class="language-tag">{{ message.language | uppercase }}</span>
+      <span class="date">{{ message.createdAt | date:'short' }}</span>
+    </div>
+    <p>{{ message.body }}</p>
+    <button *ngIf="!message.read" (click)="onMarkAsRead(message.id)">Mark as Read</button>
+  </div>
+</div>

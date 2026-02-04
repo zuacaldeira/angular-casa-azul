@@ -1,0 +1,16 @@
+<div class="group-dashboard">
+  <h2>Groups</h2>
+
+  <div *ngIf="loading" class="loading">Loading...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div *ngIf="!loading && !error" class="groups-grid">
+    <div *ngFor="let group of groups; trackBy: trackByGroupId" class="group-card">
+      <h3>{{ group.name }}</h3>
+      <p>Language: {{ getLanguageLabel(group.language) }}</p>
+      <p>Age Range: {{ group.ageRange.min }} - {{ group.ageRange.max }} years</p>
+      <p>Capacity: {{ group.childIds.length }} / {{ group.capacity }} ({{ getRemainingCapacity(group) }} spots left)</p>
+      <a [routerLink]="['/groups', group.id]">View Details</a>
+    </div>
+  </div>
+</div>

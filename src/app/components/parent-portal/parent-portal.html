@@ -1,0 +1,19 @@
+<div class="parent-portal">
+  <h2>Parent Portal</h2>
+
+  <div *ngIf="user$ | async as user">
+    <p>Welcome, {{ user.firstName }} {{ user.lastName }}</p>
+    <button (click)="onLogout()">Logout</button>
+  </div>
+
+  <div *ngIf="loading" class="loading">Loading...</div>
+
+  <div *ngIf="!loading && children.length > 0">
+    <h3>My Children</h3>
+    <ul>
+      <li *ngFor="let child of children">
+        {{ child.firstName }} {{ child.lastName }}
+      </li>
+    </ul>
+  </div>
+</div>

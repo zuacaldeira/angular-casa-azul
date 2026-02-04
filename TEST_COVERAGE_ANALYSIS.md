@@ -1,69 +1,81 @@
-# Test Coverage Analysis - Angular Casa Azul
+# Test Coverage Analysis - Casa Azul Kindergarten
+
+Casa Azul is a multilingual (German, Portuguese, French) kindergarten management application.
 
 ## Executive Summary
 
-The project has **extremely low test coverage**: **12.55% statement coverage** and **5.44% line coverage** across all source files. Only 6 spec files exist with 7 total test cases, and every existing test is a bare-minimum "should create" smoke test that verifies nothing beyond instantiation.
+The project has **very low test coverage**: **6.71% statement coverage** and **3.71% line coverage** across all source files. Only 5 spec files exist with 6 total test cases, and every existing test is a bare-minimum "should create" smoke test that verifies nothing beyond instantiation.
 
-**13 out of 19 source files have zero test coverage.**
+**19 out of 24 source files have zero test coverage.**
 
 ---
 
 ## Current Coverage Report
 
-| Category | Files | Stmts | Branch | Funcs | Lines |
-|----------|-------|-------|--------|-------|-------|
-| **All files** | **19** | **12.55%** | **53.65%** | **5.35%** | **5.44%** |
-| app (root component) | 1 | 100% | 91.66% | 100% | 100% |
-| components/amenity-badge | 1 | 100% | 100% | 100% | 100% |
-| components/search-filter | 1 | 100% | 100% | 100% | 100% |
-| components/booking-form | 1 | **0%** | **0%** | **0%** | **0%** |
-| components/header | 1 | **0%** | 100% | **0%** | **0%** |
-| components/property-detail | 1 | **0%** | 100% | 100% | **0%** |
-| components/property-listing | 1 | **0%** | 100% | **0%** | **0%** |
-| components/review-list | 1 | **0%** | **0%** | **0%** | **0%** |
-| components/user-profile | 1 | **0%** | **0%** | **0%** | **0%** |
-| guards | 1 | **0%** | **0%** | **0%** | **0%** |
-| interceptors | 1 | **0%** | **0%** | **0%** | **0%** |
-| pipes/currency-format | 1 | **0%** | **0%** | **0%** | **0%** |
-| pipes/date-range | 1 | 12.5% | 42.85% | **0%** | 7.14% |
-| services/auth | 1 | 50% | 100% | **0%** | 36.36% |
-| services/booking | 1 | **0%** | **0%** | **0%** | **0%** |
-| services/notification | 1 | 25% | 100% | **0%** | 13.33% |
-| services/property | 1 | **0%** | **0%** | **0%** | **0%** |
-| services/review | 1 | **0%** | **0%** | **0%** | **0%** |
+| Category | Stmts | Branch | Funcs | Lines | Uncovered |
+|----------|-------|--------|-------|-------|-----------|
+| **All files** | **6.71%** | **21.05%** | **2.98%** | **3.71%** | |
+| app (root component) | 75% | 91.66% | 100% | 50% | |
+| components/language-badge | 100% | 85.71% | 100% | 100% | |
+| components/attendance-tracker | **0%** | **0%** | **0%** | **0%** | Lines 13-88 |
+| components/child-enrollment | **0%** | **0%** | **0%** | **0%** | Lines 15-81 |
+| components/child-list | **0%** | **0%** | **0%** | **0%** | Lines 13-57 |
+| components/group-dashboard | **0%** | **0%** | **0%** | **0%** | Lines 13-54 |
+| components/header | **0%** | 100% | **0%** | **0%** | Lines 14-39 |
+| components/message-inbox | **0%** | **0%** | **0%** | **0%** | Lines 13-58 |
+| components/parent-portal | **0%** | **0%** | **0%** | **0%** | Lines 15-49 |
+| components/schedule-view | **0%** | **0%** | **0%** | **0%** | Lines 12-58 |
+| guards/auth-guard | **0%** | **0%** | **0%** | **0%** | Lines 5-14 |
+| interceptors/auth-interceptor | **0%** | **0%** | **0%** | **0%** | Lines 5-18 |
+| pipes/age-pipe | 10.52% | 10.71% | **0%** | 5.88% | Lines 8-36 |
+| pipes/language-label-pipe | **0%** | **0%** | **0%** | **0%** | Lines 7-18 |
+| services/attendance | **0%** | **0%** | **0%** | **0%** | Lines 9-78 |
+| services/auth | 31.81% | 45.45% | **0%** | 21.05% | Lines 17-57 |
+| services/child | **0%** | **0%** | **0%** | **0%** | Lines 9-93 |
+| services/group | **0%** | **0%** | **0%** | **0%** | Lines 9-48 |
+| services/message | **0%** | **0%** | **0%** | **0%** | Lines 9-46 |
+| services/notification | 25% | 100% | **0%** | 13.33% | Lines 11-36 |
+| services/schedule | **0%** | **0%** | **0%** | **0%** | Lines 9-100 |
 
 ---
 
 ## Inventory of Existing Tests
 
-### Files WITH spec files (6 files, 7 tests)
+### Files WITH spec files (5 files, 6 tests)
 
 | Spec File | Tests | Quality Assessment |
 |-----------|-------|--------------------|
 | `app.spec.ts` | 2 | Smoke test only: checks component creates and renders a title |
-| `search-filter.spec.ts` | 1 | Smoke test only: `should create` |
-| `amenity-badge.spec.ts` | 1 | Smoke test only: `should create` |
+| `language-badge.spec.ts` | 1 | Smoke test only: `should create` |
 | `auth.spec.ts` | 1 | Smoke test only: `should be created` |
 | `notification.spec.ts` | 1 | Smoke test only: `should be created` |
-| `date-range-pipe.spec.ts` | 1 | Smoke test only: `create an instance` |
+| `age-pipe.spec.ts` | 1 | Smoke test only: `create an instance` |
 
-**Every existing test is just a creation/instantiation check.** None of them test any actual behavior, business logic, edge cases, or error handling.
+**Every existing test is just a creation/instantiation check.** None test actual behavior, business logic, edge cases, or error handling.
 
-### Files WITHOUT spec files (13 files)
+### Files WITHOUT spec files (19 files)
 
-- `services/property.ts` - PropertyService
-- `services/booking.ts` - BookingService
-- `services/review.ts` - ReviewService
-- `pipes/currency-format-pipe.ts` - CurrencyFormatPipe
+**Services:**
+- `services/child.ts` - ChildService (enrollment validation, age calculation, language filtering)
+- `services/attendance.ts` - AttendanceService (rate calculation, absence streaks, check-in/out validation)
+- `services/group.ts` - GroupService (capacity checks, age eligibility, group matching)
+- `services/schedule.ts` - ScheduleService (language balance, activity validation, time distribution)
+- `services/message.ts` - MessageService (unread counts, language filtering)
+
+**Components:**
+- `components/child-list/child-list.ts` - ChildList
+- `components/child-enrollment/child-enrollment.ts` - ChildEnrollment
+- `components/attendance-tracker/attendance-tracker.ts` - AttendanceTracker
+- `components/group-dashboard/group-dashboard.ts` - GroupDashboard
+- `components/schedule-view/schedule-view.ts` - ScheduleView
+- `components/message-inbox/message-inbox.ts` - MessageInbox
+- `components/parent-portal/parent-portal.ts` - ParentPortal
+- `components/header/header.ts` - Header
+
+**Infrastructure:**
 - `guards/auth-guard.ts` - authGuard
 - `interceptors/auth-interceptor.ts` - authInterceptor
-- `components/property-listing/property-listing.ts` - PropertyListing
-- `components/property-detail/property-detail.ts` - PropertyDetail
-- `components/booking-form/booking-form.ts` - BookingForm
-- `components/user-profile/user-profile.ts` - UserProfile
-- `components/review-list/review-list.ts` - ReviewList
-- `components/header/header.ts` - Header
-- `app.routes.ts` - Route configuration
+- `pipes/language-label-pipe.ts` - LanguageLabelPipe
 
 ---
 
@@ -71,202 +83,273 @@ The project has **extremely low test coverage**: **12.55% statement coverage** a
 
 ### Priority 1 (Critical) - Core Business Logic Services
 
-These contain the most important testable logic and should be addressed first.
+These services contain the kindergarten's most important logic and should be tested first.
 
-#### 1. BookingService (`services/booking.ts`) - No tests exist
+#### 1. ChildService (`services/child.ts`) - No tests exist
 
-The `validateBookingDates()` method has three distinct validation branches that must be tested:
+Contains the enrollment validation logic that directly affects admissions:
 
-- **Check-in date in the past** - boundary condition at midnight
-- **Check-out before/equal to check-in** - invalid date ordering
-- **Stay exceeding 30 days** - maximum stay enforcement
-- **Valid date range** - happy path
-- **Combined errors** - multiple validation failures at once
+- **`validateEnrollment()`** - 7 distinct validation branches:
+  - Missing child first/last name
+  - Missing date of birth
+  - Age below 2 years (too young)
+  - Age above 6 years (too old)
+  - No preferred languages selected
+  - Invalid language codes
+  - Missing/invalid parent email
+  - Missing parent phone
+  - **Combined errors** - multiple validation failures at once
+- **`calculateAge()`** - date arithmetic with birthday boundary:
+  - Child born today (age 0)
+  - Birthday not yet passed this year (age - 1)
+  - Birthday already passed (full years)
+- **`filterByLanguage()`** - filters children by language program:
+  - Filter for `de`, `pt`, or `fr`
+  - Child with multiple languages matched
+  - No matches returns empty array
+- **HTTP methods** (`getChildren`, `getChildById`, `getChildrenByGroup`, `enrollChild`, `updateChild`) - verify correct URLs and request bodies with `HttpTestingController`
 
-The HTTP methods (`createBooking`, `getBookingsByUser`, `cancelBooking`) should be tested with `HttpTestingController` to verify correct URLs, HTTP methods, and request bodies.
+```
+Recommended tests: ~18-22 test cases
+```
+
+#### 2. AttendanceService (`services/attendance.ts`) - No tests exist
+
+Attendance tracking is legally required for kindergartens:
+
+- **`calculateAttendanceRate()`**:
+  - Empty records returns 0
+  - All present returns 100
+  - Mix of present/absent/sick/vacation
+  - Rounding behavior (returns integer percentage)
+- **`getAbsenceStreak()`**:
+  - No absences returns 0
+  - Consecutive absences counted from most recent date
+  - Streak broken by a "present" day
+  - Records in unsorted order (tests internal sorting)
+- **`validateCheckInOut()`**:
+  - Check-out before check-in (invalid)
+  - Stay longer than 10 hours (invalid)
+  - Valid check-in/check-out
+  - Missing check-in or check-out (both undefined)
+- **HTTP methods** - verify correct endpoint URLs and query parameters
+
+```
+Recommended tests: ~14-16 test cases
+```
+
+#### 3. ScheduleService (`services/schedule.ts`) - No tests exist
+
+Language balance is a core feature of the multilingual kindergarten:
+
+- **`calculateTotalMinutes()`**:
+  - Empty activities returns 0
+  - Sum of multiple activity durations
+- **`getLanguageDistribution()`**:
+  - All three languages represented
+  - Only one language used
+  - Empty activities returns all zeros
+- **`isLanguageBalanced()`** - critical for ensuring fair multilingual exposure:
+  - Balanced 3-language schedule (33%/33%/33%)
+  - Unbalanced schedule (70%/20%/10%)
+  - Custom tolerance threshold
+  - Single-language schedule (considered balanced)
+  - Empty schedule (considered balanced)
+  - Two languages active (50%/50% expected)
+- **`validateActivity()`**:
+  - Missing description
+  - Zero/negative duration
+  - Duration exceeding 3 hours
+  - Invalid time format (not HH:mm)
+  - Invalid language
+  - Valid activity passes all checks
+
+```
+Recommended tests: ~16-20 test cases
+```
+
+#### 4. AuthService (`services/auth.ts`) - Only a smoke test exists
+
+All methods are untested despite being security-relevant:
+
+- **`login()`** - should POST credentials, update currentUser BehaviorSubject
+- **`logout()`** - should clear currentUser, remove localStorage token
+- **`getCurrentUser()`** - should return observable of current user state
+- **`isAuthenticated()`** - true when user set, false otherwise
+- **`isTeacher()` / `isParent()`** - role-based access checks
+- **`getUserLanguage()`** - returns parent's preferred language or teacher's first language, defaults to `'de'`
+- **`getToken()`** - reads from localStorage
+
+```
+Recommended tests: ~12-14 test cases
+```
+
+#### 5. GroupService (`services/group.ts`) - No tests exist
+
+Group placement affects child safety (capacity limits, age ranges):
+
+- **`hasCapacity()`** - full group vs. group with space
+- **`getRemainingCapacity()`** - correct count, never negative
+- **`isAgeEligible()`** - within range, below min, above max, boundary ages
+- **`findEligibleGroups()`** - combines capacity + age + language filters:
+  - Matching group found
+  - No groups match (wrong language, full, wrong age)
+  - Multiple matches returned
 
 ```
 Recommended tests: ~10-12 test cases
 ```
 
-#### 2. PropertyService (`services/property.ts`) - No tests exist
+#### 6. MessageService (`services/message.ts`) - No tests exist
 
-The `calculateTotalPrice()` method has critical business logic:
-
-- **Normal price calculation** - multiple nights
-- **Single night stay** - boundary
-- **Invalid dates (checkout <= checkin)** - should throw error
-- **Same-day checkout** - edge case
-
-HTTP methods should verify endpoint URLs and request structure for `getProperties`, `getPropertyById`, and `searchProperties`.
+- **`countUnread()`** - empty list, all read, mix of read/unread
+- **`filterByLanguage()`** - filter messages by `de`/`pt`/`fr`
+- **`updateUnreadCount()`** - positive value, zero, negative clamps to 0
+- **`markAsRead()`** - decrements unread count, doesn't go below 0
 
 ```
 Recommended tests: ~8-10 test cases
-```
-
-#### 3. AuthService (`services/auth.ts`) - Only a smoke test exists
-
-All methods are untested:
-
-- **login()** - should POST credentials, update currentUser BehaviorSubject
-- **logout()** - should clear currentUser, remove localStorage token
-- **getCurrentUser()** - should return observable of current user state
-- **isAuthenticated()** - should return true when user is set, false otherwise
-- **getToken()** - should read from localStorage
-
-```
-Recommended tests: ~8-10 test cases
-```
-
-#### 4. ReviewService (`services/review.ts`) - No tests exist
-
-The `calculateAverageRating()` method needs:
-
-- **Empty reviews array** - should return 0
-- **Single review** - should return that review's rating
-- **Multiple reviews** - should compute correct average
-- **Decimal precision** - fractional averages
-
-```
-Recommended tests: ~6-8 test cases
 ```
 
 ### Priority 2 (High) - Security Infrastructure
 
-#### 5. authGuard (`guards/auth-guard.ts`) - No tests exist
+#### 7. authGuard (`guards/auth-guard.ts`) - No tests exist
 
-Route guards are security-critical:
+Route guards protect enrollment forms, attendance, messages, and parent portal:
 
 - **Authenticated user** - should return true, allow navigation
-- **Unauthenticated user** - should return false, redirect to /login
+- **Unauthenticated user** - should return false, redirect to `/login`
 - **Integration with Router.navigate** - verify redirect URL
 
 ```
 Recommended tests: ~3-4 test cases
 ```
 
-#### 6. authInterceptor (`interceptors/auth-interceptor.ts`) - No tests exist
+#### 8. authInterceptor (`interceptors/auth-interceptor.ts`) - No tests exist
 
-HTTP interceptors affect every API call:
+Affects every API call to the kindergarten backend:
 
-- **With token present** - should add Authorization header
+- **With token present** - should clone request and add `Authorization: Bearer` header
 - **Without token** - should pass request through unchanged
-- **Header format** - should use "Bearer <token>" format
-- **Original request unchanged** - verify clone, not mutation
-
-```
-Recommended tests: ~4-5 test cases
-```
-
-### Priority 3 (High) - Complex Components
-
-#### 7. BookingForm (`components/booking-form/booking-form.ts`) - No tests exist
-
-Most complex component with form logic, validation, and side effects:
-
-- **Form initialization** - default values, validators
-- **calculateTotal()** - delegates to PropertyService correctly
-- **calculateTotal() with invalid dates** - catches error, sets total to 0
-- **onSubmit() with invalid form** - should return early
-- **onSubmit() with invalid dates** - should show validation errors
-- **onSubmit() success** - should create booking, show notification, navigate
-- **onSubmit() API error** - should show error notification
-
-```
-Recommended tests: ~8-10 test cases
-```
-
-#### 8. PropertyListing (`components/property-listing/property-listing.ts`) - No tests exist
-
-- **ngOnInit** - should call loadProperties, set loading state
-- **loadProperties() success** - should populate properties array
-- **loadProperties() error** - should set error message
-- **onSearch()** - should call searchProperties with filters
-- **onSearch() error** - should set error message
-- **trackByPropertyId** - should return property.id
-
-```
-Recommended tests: ~6-8 test cases
-```
-
-#### 9. UserProfile (`components/user-profile/user-profile.ts`) - No tests exist
-
-- **ngOnInit** - should set up user$ and bookings$ observables
-- **bookings$ pipe** - should switchMap from user to their bookings
-- **bookings$ with no user** - should return empty array
-- **onLogout()** - should call authService.logout and navigate
-
-```
-Recommended tests: ~5-6 test cases
-```
-
-#### 10. ReviewList (`components/review-list/review-list.ts`) - No tests exist
-
-- **ngOnInit with propertyId** - should load reviews
-- **ngOnInit without propertyId** - should not load reviews
-- **loadReviews() success** - should populate reviews and compute average
-- **loadReviews() error** - should handle error gracefully
-
-```
-Recommended tests: ~4-5 test cases
-```
-
-### Priority 4 (Medium) - Pipes and Presentation
-
-#### 11. CurrencyFormatPipe (`pipes/currency-format-pipe.ts`) - No tests exist
-
-Pipes are pure functions and among the easiest to test thoroughly:
-
-- **USD formatting** - "$1,234.56"
-- **EUR formatting** - euro symbol
-- **GBP formatting** - pound symbol
-- **Unknown currency** - fallback to $
-- **null/undefined input** - should return empty string
-- **Zero value** - "$0.00"
-- **Large numbers** - thousand separator formatting
-
-```
-Recommended tests: ~7-8 test cases
-```
-
-#### 12. DateRangePipe (`pipes/date-range-pipe.ts`) - Only smoke test exists
-
-The existing test just checks `new DateRangePipe()` is truthy. The actual `transform()` logic is completely untested:
-
-- **Normal date range** - "Jan 1 - Jan 5, 2025 (4 nights)"
-- **Cross-month range** - different months
-- **Single night** - "1 nights" (also reveals a potential bug - "1 nights" vs "1 night")
-- **null/undefined input** - should return empty string
-
-```
-Recommended tests: ~5-6 test cases
-```
-
-#### 13. Header (`components/header/header.ts`) - No tests exist
-
-- **isLoggedIn getter** - should reflect auth state
-- **onLogout()** - should delegate to authService and navigate
+- **Original request not mutated** - verify clone behavior
 
 ```
 Recommended tests: ~3-4 test cases
 ```
 
-### Priority 5 (Lower) - Existing Tests That Need Enhancement
+### Priority 3 (High) - Complex Components
 
-#### 14. NotificationService - Existing spec is smoke-only
+#### 9. ChildEnrollment (`components/child-enrollment/child-enrollment.ts`) - No tests exist
 
-The `showSuccess`, `showError`, `getNotifications`, `clearAll` methods, and the 5-second auto-removal timeout are all untested. These should be tested with `fakeAsync`/`tick` to verify the timer behavior.
+The most complex component, directly handles parent-facing enrollment:
+
+- **Form initialization** - default values, validators
+- **`onLanguageToggle()`** - toggling DE/PT/FR on/off
+- **`onSubmit()` with invalid form** - should return early
+- **`onSubmit()` with validation errors** - should show errors via NotificationService
+- **`onSubmit()` success** - should call `enrollChild()`, show success notification, navigate
+- **`onSubmit()` API error** - should show error notification, reset submitting state
+- **Allergies parsing** - comma-separated string to array
+
+```
+Recommended tests: ~10-12 test cases
+```
+
+#### 10. AttendanceTracker (`components/attendance-tracker/attendance-tracker.ts`) - No tests exist
+
+- **`ngOnInit` with groupId** - should load children and attendance records
+- **`ngOnInit` without groupId** - should not load data
+- **`markPresent()`** - should record attendance and update rate
+- **`markAbsent()`** with different statuses (`absent`, `sick`, `vacation`)
+- **`getChildRecord()`** - find or return undefined
+- **Error handling** for failed API calls
+
+```
+Recommended tests: ~8-10 test cases
+```
+
+#### 11. ChildList (`components/child-list/child-list.ts`) - No tests exist
+
+- **`ngOnInit`** - should load children
+- **`loadChildren()` success** - should populate both `children` and `filteredChildren`
+- **`loadChildren()` error** - should set error message
+- **`onFilterByLanguage()`** - filter by `de`/`pt`/`fr` or reset with `null`
+- **`getAge()`** - delegates to ChildService.calculateAge
+- **`trackByChildId()`** - returns child.id
+
+```
+Recommended tests: ~7-9 test cases
+```
+
+#### 12. ScheduleView (`components/schedule-view/schedule-view.ts`) - No tests exist
+
+- **`ngOnInit` with groupId** - loads schedule
+- **`loadSchedule()` success** - populates schedule, computes distribution & balance
+- **`onDateChange()`** - updates selectedDate and reloads
+- **`formatMinutes()`** - "45m", "1h", "2h 30m" formatting
+
+```
+Recommended tests: ~6-8 test cases
+```
+
+#### 13. GroupDashboard, MessageInbox, ParentPortal, Header - No tests exist
+
+Each has 3-5 methods that need coverage:
+
+- GroupDashboard: load groups, capacity display, language labels
+- MessageInbox: load messages, mark as read, unread count sync
+- ParentPortal: load user, load children via switchMap, logout
+- Header: role-based navigation (teacher vs parent vs logged out), unread badge, logout
+
+```
+Recommended tests: ~5-7 test cases each (~20-28 total)
+```
+
+### Priority 4 (Medium) - Pipes
+
+#### 14. AgePipe (`pipes/age-pipe.ts`) - Only smoke test exists
+
+The transform logic is completely untested:
+
+- **Child aged 3 years, 6 months** - "3 years, 6 months"
+- **Child aged exactly 5 years** - "5 years"
+- **Infant under 1 year** - "8 months"
+- **Singular forms** - "1 year", "1 month"
+- **null/undefined input** - returns empty string
+- **Future date** - returns empty string (negative age)
+
+```
+Recommended tests: ~6-8 test cases
+```
+
+#### 15. LanguageLabelPipe (`pipes/language-label-pipe.ts`) - No tests exist
+
+- **`'de'`** → "Deutsch"
+- **`'pt'`** → "Português"
+- **`'fr'`** → "Français"
+- **null/undefined** → empty string
+- **Unknown language code** → returns the code itself
+
+```
+Recommended tests: ~5-6 test cases
+```
+
+### Priority 5 (Lower) - Existing Smoke Tests That Need Enhancement
+
+#### 16. NotificationService - Existing spec is smoke-only
+
+The `showSuccess`, `showError`, `getNotifications`, and `clearAll` methods plus the 5-second auto-removal timeout are all untested. These should be tested with `fakeAsync`/`tick`.
 
 ```
 Recommended additional tests: ~6-8 test cases
 ```
 
-#### 15. SearchFilter and AmenityBadge - Existing specs are smoke-only
+#### 17. LanguageBadge - Existing spec is smoke-only
 
-Both components only test creation. Any template rendering, input/output binding, or interactive behavior is untested.
+The `label` and `flag` getters for each language (`de`, `pt`, `fr`) are untested.
 
 ```
-Recommended additional tests: ~2-4 test cases each
+Recommended additional tests: ~4-5 test cases
 ```
 
 ---
@@ -275,13 +358,13 @@ Recommended additional tests: ~2-4 test cases each
 
 | Phase | Scope | Est. Tests | Rationale |
 |-------|-------|-----------|-----------|
-| **Phase 1** | BookingService, PropertyService, AuthService, ReviewService | ~30-40 | Core business logic; highest risk if broken |
-| **Phase 2** | authGuard, authInterceptor | ~7-9 | Security-critical; affects all authenticated flows |
-| **Phase 3** | BookingForm, PropertyListing, UserProfile | ~19-24 | Complex components with user-facing interaction |
-| **Phase 4** | CurrencyFormatPipe, DateRangePipe, NotificationService | ~18-22 | Pure logic and utility; easy to write, high value |
-| **Phase 5** | Header, ReviewList, SearchFilter, AmenityBadge | ~12-20 | Remaining components; lower complexity |
+| **Phase 1** | ChildService, AttendanceService, ScheduleService, AuthService | ~60-72 | Core kindergarten business logic: enrollment validation, attendance tracking, language balance, authentication |
+| **Phase 2** | GroupService, MessageService, authGuard, authInterceptor | ~24-30 | Group placement safety (capacity/age), messaging, and security infrastructure |
+| **Phase 3** | ChildEnrollment, AttendanceTracker, ChildList | ~25-31 | Parent-facing enrollment form, daily teacher workflow, primary listing view |
+| **Phase 4** | AgePipe, LanguageLabelPipe, NotificationService, LanguageBadge | ~21-27 | Pure logic pipes and utilities; easy wins for coverage |
+| **Phase 5** | ScheduleView, GroupDashboard, MessageInbox, ParentPortal, Header | ~25-35 | Remaining components with moderate complexity |
 
-**Total estimated new tests needed: ~86-115 test cases** to achieve reasonable coverage across the application.
+**Total estimated new tests needed: ~155-195 test cases** to achieve 70-80% meaningful coverage.
 
 ---
 
@@ -289,8 +372,12 @@ Recommended additional tests: ~2-4 test cases each
 
 ### 1. Use `HttpTestingController` for all HTTP services
 
+Six services make HTTP calls. Every one needs `HttpTestingController`:
+
 ```typescript
-// Example pattern for testing PropertyService
+import { provideHttpClient } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+
 let httpTesting: HttpTestingController;
 beforeEach(() => {
   TestBed.configureTestingModule({
@@ -304,28 +391,75 @@ afterEach(() => httpTesting.verify()); // Ensure no unexpected requests
 
 ### 2. Use `fakeAsync`/`tick` for timer-based logic
 
-The NotificationService auto-dismiss behavior requires `fakeAsync` and `tick(5000)` to test the setTimeout logic.
+NotificationService auto-dismiss (5-second setTimeout) requires:
+
+```typescript
+it('should auto-remove success notification after 5 seconds', fakeAsync(() => {
+  service.showSuccess('Test');
+  expect(service.getNotifications()).toContain('Test');
+  tick(5000);
+  expect(service.getNotifications()).not.toContain('Test');
+}));
+```
 
 ### 3. Mock services in component tests
 
-Components like BookingForm inject 4 services. Use `jasmine.createSpyObj` or manual mocks to isolate component behavior from service implementation.
+Components like ChildEnrollment inject 3 services. Use `vi.fn()` (Vitest) mocks to isolate:
 
-### 4. Test error paths, not just happy paths
+```typescript
+const mockChildService = {
+  validateEnrollment: vi.fn(),
+  enrollChild: vi.fn(),
+};
 
-Multiple components have `.subscribe({ error: ... })` handlers that are currently untested. Use `HttpTestingController.flush()` with error responses to cover these.
+TestBed.configureTestingModule({
+  imports: [ChildEnrollment],
+  providers: [
+    { provide: ChildService, useValue: mockChildService },
+  ],
+});
+```
 
-### 5. Route guard testing with `RouterTestingModule`
+### 4. Test the multilingual aspects specifically
 
-Test `authGuard` by configuring TestBed with the guard on a route and verifying navigation behavior for both authenticated and unauthenticated states.
+The kindergarten's trilingual nature means language-related logic appears across many services and components. Dedicated tests should verify:
+
+- Language filtering works for all three languages (`de`, `pt`, `fr`)
+- Schedule balance calculations handle 2-language and 3-language distributions
+- LanguageLabelPipe maps codes to correct native-language labels
+- Parent's preferred language flows through to the UI correctly
+
+### 5. Test error paths, not just happy paths
+
+Multiple components have `.subscribe({ error: ... })` handlers. Use `HttpTestingController` to flush error responses:
+
+```typescript
+const req = httpTesting.expectOne('/api/children');
+req.flush('Server error', { status: 500, statusText: 'Internal Server Error' });
+```
+
+### 6. Test guard integration with routes
+
+Test `authGuard` by configuring TestBed with the guard on a route and verifying navigation:
+
+```typescript
+TestBed.configureTestingModule({
+  providers: [
+    provideRouter([{ path: 'enroll', component: ChildEnrollment, canActivate: [authGuard] }]),
+  ],
+});
+```
 
 ---
 
 ## Summary
 
-The codebase has significant testing gaps with only smoke tests in place. The most urgent priorities are:
+The Casa Azul kindergarten app has critical testing gaps across all layers:
 
-1. **Business logic in services** (validation, price calculation, rating computation) - these are the most critical and testable
-2. **Security infrastructure** (auth guard, auth interceptor) - currently zero coverage on authentication enforcement
-3. **Complex component interactions** (BookingForm with form validation, PropertyListing with loading/error states)
+1. **Enrollment validation** (ChildService) - zero coverage on the logic that determines whether children can be admitted, including age range checks and required field validation
+2. **Attendance tracking** (AttendanceService) - zero coverage on rate calculations, absence streak detection, and check-in/out time validation
+3. **Language balance** (ScheduleService) - zero coverage on the algorithm that ensures fair distribution of German, Portuguese, and French instruction time
+4. **Security** (authGuard, authInterceptor) - zero coverage on route protection and API authentication
+5. **All components** (7 of 8) - zero coverage on every user-facing view
 
-Reaching even 60-70% meaningful coverage would require approximately 90+ new test cases focused on actual behavior rather than just instantiation checks.
+Reaching 70-80% meaningful coverage requires approximately **155-195 new test cases** focused on actual behavior, with highest priority on the services containing kindergarten-specific business rules.
