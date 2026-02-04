@@ -1,0 +1,18 @@
+# Dependencies
+/node_modules
+
+# Build output
+/dist
+/.angular
+
+# IDE
+.idea
+*.swp
+*.swo
+
+# Coverage
+/coverage
+
+# OS
+.DS_Store
+Thumbs.db
