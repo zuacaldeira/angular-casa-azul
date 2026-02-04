@@ -1,0 +1,26 @@
+<div class="login-page">
+  <div class="login-card">
+    <h2>Casa Azul Login</h2>
+    <p class="subtitle">Multilingual Kindergarten Management</p>
+
+    <form (ngSubmit)="onSubmit()">
+      <div *ngIf="error" class="error">{{ error }}</div>
+
+      <label>
+        Email
+        <input type="email" [(ngModel)]="email" name="email" placeholder="anna@casaazul.de" />
+      </label>
+
+      <label>
+        Password
+        <input type="password" [(ngModel)]="password" name="password" placeholder="any password" />
+      </label>
+
+      <button type="submit" [disabled]="loading" class="login-btn">
+        {{ loading ? 'Logging in...' : 'Login' }}
+      </button>
+
+      <p class="hint">Demo: enter any email and password</p>
+    </form>
+  </div>
+</div>

@@ -6,11 +6,13 @@ import { AttendanceTracker } from './components/attendance-tracker/attendance-tr
 import { ScheduleView } from './components/schedule-view/schedule-view';
 import { MessageInbox } from './components/message-inbox/message-inbox';
 import { ParentPortal } from './components/parent-portal/parent-portal';
+import { Login } from './components/login/login';
 import { authGuard } from './guards/auth-guard';
 
 export const routes: Routes = [
   { path: '', component: ChildList },
   { path: 'children', component: ChildList },
+  { path: 'login', component: Login },
   { path: 'enroll', component: ChildEnrollment, canActivate: [authGuard] },
   { path: 'groups', component: GroupDashboard },
   { path: 'attendance', component: AttendanceTracker, canActivate: [authGuard] },
