@@ -47,6 +47,27 @@ import { HeroComponent } from '../../shared/components/hero/hero.component';
               Kunst und Musik – ganzheitlich zu fördern.
             </p>
 
+            <h3>Unsere Ziele</h3>
+            <p>
+              Im Mittelpunkt unserer Arbeit steht die Förderung von <strong>Selbstständigkeit</strong>,
+              <strong>Partizipation</strong> und <strong>Kompetenzen</strong> der Kinder. Wir schaffen
+              Räume, in denen Kinder aktiv mitgestalten, eigene Entscheidungen treffen und
+              Verantwortung übernehmen können.
+            </p>
+
+            <h3>Theoretische Grundlagen</h3>
+            <p>
+              Unsere pädagogische Praxis wird durch die Erkenntnisse von <strong>Urie Bronfenbrenner</strong>
+              und <strong>Hans Thiersch</strong> geprägt. Wir betrachten die reichhaltigen Lebenswelten
+              der Kinder – von der Familie über die Kita bis zum weiteren sozialen Umfeld – als
+              miteinander verbundene Systeme, die ihre Entwicklung beeinflussen.
+            </p>
+            <p>
+              Die lebensweltorientierte Pädagogik nach Thiersch leitet uns dabei, die
+              Alltagserfahrungen der Kinder ernst zu nehmen und unsere Arbeit an ihrer
+              konkreten Lebenswirklichkeit auszurichten.
+            </p>
+
             <h3>Mehrsprachigkeit als Chance</h3>
             <p>
               Bei Casa Azul lernen Kinder spielerisch drei Sprachen: Deutsch, Französisch
