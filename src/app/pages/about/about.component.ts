@@ -35,10 +35,16 @@ import { HeroComponent } from '../../shared/components/hero/hero.component';
 
             <h3>Unser pädagogisches Konzept</h3>
             <p>
-              Unsere Pädagogik zielt darauf ab, die soziale Vorstellungskraft und Intelligenz
-              zu fördern sowie Weltoffenheit und Internationalität zu vermitteln. Gleichzeitig
-              legen wir Wert auf die Entwicklung technisch-wirtschaftlicher sowie
-              kulturell-künstlerischer Kreativität.
+              Unsere pädagogische Arbeit basiert auf dem <strong>Situationsansatz</strong> und
+              orientiert sich am <strong>Berliner Bildungsprogramm</strong>. Wir begleiten Kinder
+              in ihren individuellen Lern- und Entwicklungsprozessen, indem wir ihre Lebenssituationen,
+              Interessen und Fragen zum Ausgangspunkt unserer Arbeit machen.
+            </p>
+            <p>
+              Der Situationsansatz ermöglicht es uns, Bildungsprozesse an realen Erfahrungen
+              der Kinder anzuknüpfen. Das Berliner Bildungsprogramm gibt uns dabei den Rahmen,
+              um alle Bildungsbereiche – von Sprache über Naturwissenschaften bis hin zu
+              Kunst und Musik – ganzheitlich zu fördern.
             </p>
 
             <h3>Mehrsprachigkeit als Chance</h3>
@@ -68,6 +74,9 @@ import { HeroComponent } from '../../shared/components/hero/hero.component';
 
                 <dt>Träger</dt>
                 <dd>Casa Azul – Blaues Haus e.V.</dd>
+
+                <dt>Pädagogik</dt>
+                <dd>Situationsansatz, Berliner Bildungsprogramm</dd>
               </dl>
             </div>
 
